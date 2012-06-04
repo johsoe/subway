@@ -302,6 +302,12 @@ $(function() {
           irc.appView.channelList.channelTabs[0].setActive();
         }
         break;
+
+      case '/nick':
+        if (commandText[1]) {
+          irc.socket.emit('nick', {nick : commandText[1]});
+        }
+        break;
       case '/topic':
         if (commandText[2]) {
           irc.socket.emit('topic', {name: commandText[1], topic: commandText[2]});
