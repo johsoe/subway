@@ -292,6 +292,7 @@ $(function() {
 
   irc.handleCommand = function(commandText) {
     switch (commandText[0]) {
+      case '/j':
       case '/join':
         irc.socket.emit('join', commandText[1]);
         break;
